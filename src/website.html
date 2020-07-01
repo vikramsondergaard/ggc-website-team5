@@ -2,19 +2,20 @@
 
 <html>
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=PT Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
     <style>
         .header {
-            background-image: url("../assets/presents.jpg");
+            background-image: url("../assets/BoxDemo.jpeg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
             width: 100%;
             height: 780px;
-            font-family: 'Abel';
+            font-family: 'Nunito';
             text-align: center;
             font-size: 36px;
+            color: #d19ea1;
         }
         .headerh1 {
             position: relative;
@@ -25,10 +26,12 @@
             position:relative;
             top: 250px;
             text-align: center;
+            margin-left: 15%;
+            margin-right: 15%;
         }
         .generic {
             text-align: center;
-            font-family: 'Sanchez';
+            font-family: 'PT Sans';
         }
         .generich1 {
             color:slateblue;
@@ -37,6 +40,10 @@
         .genericp {
             margin-left: 25%;
             margin-right: 25%;
+        }
+        .button {
+            width: 20%;
+            height: 20%;
         }
         .hex {
             float: left;
@@ -56,6 +63,14 @@
             top: 50px;
         }
     </style>
+    <script>
+        function darken(obj) {
+            obj.src="../assets/view-our-boxes-darker.png";
+        }
+        function lighten(obj) {
+            obj.src="../assets/view-our-boxes.png";
+        }
+    </script>
 <title>BeneBox by cSociety</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -77,6 +92,40 @@
         You can even add a personal letter to tell your loved ones that
         even though you may be physically separated, you're not socially
         distant.
+    </p>
+    </div>
+
+    <div class="generic">
+        <h1 class="generich1">Who is BeneBox for?</h1>
+        <p class="genericp">cSociety's <i>BeneBox</i> is for everyone 
+            who is struggling to find a connection and looking 
+            to holistically increase their mental health during 
+            isolation caused by the pandemic.
+        </p>
+        <p class="genericp">Though we are focusing on the elderly population in 
+            nursing and assisted living homes who are in isolation
+            to make sure that they are kept connected inside their 
+            homes.
+        </p>
+        </div>
+
+    <div class="generic">
+    <h1 class="generich1">How Do I Sign Up?</h1>
+    <p class="genericp">Great to have you on board! Regardless of
+        whether you want to commit to a full subscription or would
+        prefer to buy a one-off box, you can check out all of our
+        offers below.
+    </p>
+    <a href="boxes.html">
+    <img id="view-products" class="button" src="../assets/view-our-boxes.png" alt="Button" onmouseover="darken(this)" onmouseout="lighten(this)">
+    </a>
+</div>
+
+    <div class="generic">
+    <h1 class="generich1">How Can I Provide Products?</h1>
+    <p class="genericp">We love supporting small business. If you
+        have a product that you think will be perfect in one of our
+        care packages, please let us know.
     </p>
     </div>
 
