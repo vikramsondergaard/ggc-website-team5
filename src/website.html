@@ -2,32 +2,99 @@
 
 <html>
 <head>
-<title>BeneBox</title>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Sanchez' rel='stylesheet'>
+    <style>
+        .header {
+            background-image: url("../assets/presents.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100%;
+            height: 780px;
+            font-family: 'Abel';
+            text-align: center;
+            font-size: 36px;
+        }
+        .headerh1 {
+            position: relative;
+            top: 200px;
+            text-align: center;
+        }
+        .headerp {
+            position:relative;
+            top: 250px;
+            text-align: center;
+        }
+        .generic {
+            text-align: center;
+            font-family: 'Sanchez';
+        }
+        .generich1 {
+            color:slateblue;
+            font-size: 36px;
+        }
+        .genericp {
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        .hex {
+            float: left;
+            position: relative;
+            width: 50%;
+            height: 50%;
+            margin-left: 100px;
+        }
+        .monash {
+            float:right;
+            margin-right: 150px;
+        }
+        .anu {
+            float:right;
+            position:relative;
+            margin-right: 150px;
+            top: 50px;
+        }
+    </style>
+<title>BeneBox by cSociety</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="background-color:darkseagreen;">
-    <h1 style="text-align: center; font-family:Arial, Helvetica, sans-serif;">Hi there! Welcome to BeneBox.</h1>
-    <p style="text-align: center; font-family:Arial, Helvetica, sans-serif;">Send your loved ones a package of care, kindness and compassion.</p>
-    <p style="text-align: center; font-family:Arial, Helvetica, sans-serif;">Send them a BeneBox.</p>
+<body>
+    <div class="header">
+    <h1 class="headerh1">BENEBOX BY CSOCIETY</h1>
+    <p class="headerp">BeneBox is a Multi-modal Therapeutic Box to holistically improve
+        mental health, access to basic resources and combatting lack of
+        interaction for vulnerable members in society.</p>
+    </div>
 
-    <!--- Redundant button, I will replace this with an image hyperlink.--> 
-    <button onclick="document.location='https://www.w3schools.com/html/html_links.asp'">Click here to learn more.</button>
+    <div class="generic">
+    <h1 class="generich1">What is BeneBox?</h1>
+    <p class="genericp">BeneBox is a system that lets you provide gifts
+        for your loved ones, even if the COVID-19 pandemic has separated
+        you from them. You simply purchase a box, and a team of dedicated
+        employees and volunteers will handle its procurement and delivery.
+        You can even add a personal letter to tell your loved ones that
+        even though you may be physically separated, you're not socially
+        distant.
+    </p>
+    </div>
+
+    <div class="generic">
+    <h1 class="generich1">Our Story</h1>
+    <p class="genericp">The Hacker Exchange Great Global Challenge: A
+        Five-Day Ideas-Hack is what brought us students from Monash
+        University, Australian National University and University of
+        California, San Diego to create the <i>BeneBox</i> to help the
+        community that is affected by the COVID-19 pandemic.
+    </p>
+    </div>
+
+    <div class="sponsors">
+        <img class="hex" src="../assets/hex.png" alt="HEX">
+        <img class="monash" src="../assets/monash.png" alt="Monash">
+        <img class="anu" src="../assets/anu.png" alt="ANU">
+    </div>
 </body>
-
-<footer style="position: absolute; bottom:5px; width: 99%;">
-    <table style="width:100%; table-layout: fixed;">
-    <tr>
-        <th style="font-family: Arial, Helvetica, sans-serif;">For providers:</th>
-        <th style="font-family: Arial, Helvetica, sans-serif;">For customers:</th>
-        <th style="font-family: Arial, Helvetica, sans-serif;">For recipients:</th>
-    </tr>
-    <tr>
-        <td style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Register as a BeneBox provider</td>
-        <td style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Purchase a BeneBox</td>
-        <td style="text-align: center; font-family: Arial, Helvetica, sans-serif;">What is BeneBox?</td>
-    </tr>
-    </table>
-</footer>
 
 </html>
