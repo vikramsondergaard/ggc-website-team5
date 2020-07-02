@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 
+<!-- The majority of this content was adapted from the HTML tutorials
+provided by W3 Schools. Link here: https://www.w3schools.com -->
+
 <html>
 <head>
     <link href='https://fonts.googleapis.com/css?family=PT Sans' rel='stylesheet'>
@@ -16,6 +19,13 @@
             text-align: center;
             font-size: 36px;
             color: navy;
+        }
+        .logo {
+            position: fixed;
+            top: 50px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
         }
         .headerh1 {
             position: relative;
@@ -40,6 +50,7 @@
         .genericp {
             margin-left: 25%;
             margin-right: 25%;
+            text-justify:distribute-all-lines;
         }
         .button {
             width: 300px;
@@ -85,10 +96,10 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header" style="position:relative; top:0px;">
     <h1 class="headerh1">BENEBOX BY CSOCIETY</h1>
+    <img class="logo" src="../assets/benebox-logos.png" alt="Logo">
     </div>
-
     <div class="generic">
     <h1 class="generich1">What is BeneBox?</h1>
     <p class="genericp"><i>BeneBox</i> is a Multi-modal Therapeutic Box
@@ -103,6 +114,10 @@
         even though you may be physically separated, you're not socially
         distant.
     </p>
+    </div>
+
+    <div>
+        <h1> *** PICTURE OF A BOX *** </h1>
     </div>
 
     <div class="generic">

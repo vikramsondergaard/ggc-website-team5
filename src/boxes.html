@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+
+<!-- The majority of this content was adapted from the HTML tutorials
+provided by W3 Schools. Link here: https://www.w3schools.com -->
+
+<html style="scroll-behavior: smooth;">
 <head>
     <link href='https://fonts.googleapis.com/css?family=PT Sans' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
@@ -39,11 +43,20 @@
         .flexcontainer {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
             position: relative;
             top: 250px;
             height: 300px;
-            align-content: space-between;
+        }
+        .flexhorizontal {
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+        }
+        .subheader {
+            font-family: 'PT Sans';
+            text-align: center;
+            font-size: 24px;
+            color: #d19ea1;
         }
         .generic {
             text-align: center;
@@ -56,9 +69,39 @@
         .genericp {
             margin-left: 25%;
             margin-right: 25%;
+            text-justify: distribute-all-lines;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: #d19ea1;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #d19ea1;
+            width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: inline-block;}
+        .dropdown:hover .dropbtn {background-color: #3e8e41;}
     </style>
     <script>
+        var dest = null;
         function darken(obj,key) {
             switch (key) {
                 case 'purchase':
@@ -87,19 +130,44 @@
 
 <body>
     <div class="header">
-        <h1 class="headerh1">PURCHASE A BOX</h1>
-        <div class="flexcontainer">
-        <div>
-            <img style="width:300px; height:90px;" src="../assets/purchase-box.png" onmouseover="darken(this,'purchase')" onmouseout="lighten(this,'purchase')">
-        </div>
-        <div>
-            <img style="width:300px; height:90px;" src="../assets/customise-box.png" onmouseover="darken(this,'customise')" onmouseout="lighten(this,'customise')")>
-        </div>
+        <h1 class="headerh1">OUR BOXES</h1>
         </div>
     </div>
-    <div class="generic">
+    <div class="generic" id="purchase">
         <h1 class="generich1">Purchase a BeneBox</h1>
-        <p class="genericp">Lorem ipsum dolor sit amet.</p>
+        <p class="genericp">Buying a <i>BeneBox</i> is as easy as a few
+            clicks. Just let us know where you're based, if your
+            recipient has any specific needs, and add a customised voice
+            recording if you'd like.
+        </p>
+        <div class="flexhorizontal">
+            <div class="subheader">
+                <p>Where are you based?</p>
+            </div>
+            <div class="dropdown">
+                <button id="dropbtn" class="dropbtn">Select Destination...</button>
+                <div class="dropdown-content">
+                    <a onclick="document.getElementById('dropbtn').innerHTML = 'Canberra'; dest='Canberra';">
+                        Canberra</a>
+                    <a onclick="document.getElementById('dropbtn').innerHTML = 'Melbourne'; dest='Melbourne';">
+                        Melbourne</a>
+                    <a onclick="document.getElementById('dropbtn').innerHTML = 'San Diego'; dest='San Diego';">
+                        San Diego</a>
+                </div>
+            </div>
+            <div class="subheader">
+                <p>Does your recipient have any specific needs?</p>
+                <div>
+                <input name="special-needs" id="special-needs" type="text" size="50"><br>
+                </div>
+            </div>
+            <div class="subheader">
+                <p>Upload a personalised audio message below:</p>
+                <div>
+                    <input type="file" accept="audio/*" capture>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
