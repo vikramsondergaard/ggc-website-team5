@@ -25,28 +25,6 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             top: 200px;
             text-align: center;
         }
-        .headerp {
-            position:relative;
-            top: 250px;
-            text-align: center;
-            margin-left: 15%;
-            margin-right: 15%;
-        }
-        .purchasebutton {
-            position: relative;
-            top: 250px;
-        }
-        .customisebutton {
-            position: relative;
-            top: 400px;
-        }
-        .flexcontainer {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            top: 250px;
-            height: 300px;
-        }
         .flexhorizontal {
             display: flex;
             flex-direction: column;
@@ -82,6 +60,13 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             font-size: 16px;
             border: none;
         }
+        .btn {
+            background-color: #d19ea1;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -102,28 +87,7 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
     </style>
     <script>
         var dest = null;
-        function darken(obj,key) {
-            switch (key) {
-                case 'purchase':
-                    obj.src="../assets/purchase-box-darker.png";
-                    break;
-                case 'customise':
-                    obj.src="../assets/customise-box-darker.png";
-                    break;
-                default:
-            }
-        }
-        function lighten(obj,key) {
-            switch (key) {
-                case 'purchase':
-                    obj.src="../assets/purchase-box.png";
-                    break;
-                case 'customise':
-                    obj.src="../assets/customise-box.png";
-                    break;
-                default:
-            }
-        }
+        var customise = false;
     </script>
     <title>Buy a BeneBox</title>
 </head>
@@ -140,6 +104,15 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             recipient has any specific needs, and add a customised voice
             recording if you'd like.
         </p>
+    </div>
+    <div class="generic" id="customise">
+        <h1 class="generich1">Customise Your Own BeneBox</h1>
+        <p class="genericp">You're welcome to also create your own BeneBox. We have a wide range of products across
+            multiple cities. However, since we are passionate about sourcing local products, we do need to know in
+            which city the <i>BeneBox</i> will be delivered.
+        </p>
+    </div>
+    <div class="generic">
         <div class="flexhorizontal">
             <div class="subheader">
                 <p>Where are you based?</p>
@@ -166,6 +139,21 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
                 <div>
                     <input type="file" accept="audio/*" capture>
                 </div>
+            </div>
+            <div class="subheader" style="padding: 32px">
+                Would you like to customise your BeneBox?
+            </div>
+            <div class="dropdown" style="padding: 16px">
+                <button id="ynbutton" class="dropbtn">Customise box?</button>
+                <div class="dropdown-content">
+                    <a onclick="document.getElementById('ynbutton').innerHTML = 'Yes please, customise me!'; customise=true;">
+                        Yes please, customise me!</a>
+                    <a onclick="document.getElementById('ynbutton').innerHTML = 'No thanks, I just want a box'; customise=false;">
+                        No thanks, I just want a box</a>
+                </div>
+            </div>
+            <div style="padding: 16px;">
+                <button id="submitbtn" class="btn">Make Order</button>
             </div>
         </div>
     </div>
