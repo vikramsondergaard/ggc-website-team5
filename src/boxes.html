@@ -28,13 +28,78 @@
             margin-left: 15%;
             margin-right: 15%;
         }
+        .purchasebutton {
+            position: relative;
+            top: 250px;
+        }
+        .customisebutton {
+            position: relative;
+            top: 400px;
+        }
+        .flexcontainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            position: relative;
+            top: 250px;
+            height: 300px;
+            align-content: space-between;
+        }
+        .generic {
+            text-align: center;
+            font-family: 'PT Sans';
+        }
+        .generich1 {
+            color:#d19ea1;
+            font-size: 36px;
+        }
+        .genericp {
+            margin-left: 25%;
+            margin-right: 25%;
+        }
     </style>
+    <script>
+        function darken(obj,key) {
+            switch (key) {
+                case 'purchase':
+                    obj.src="../assets/purchase-box-darker.png";
+                    break;
+                case 'customise':
+                    obj.src="../assets/customise-box-darker.png";
+                    break;
+                default:
+            }
+        }
+        function lighten(obj,key) {
+            switch (key) {
+                case 'purchase':
+                    obj.src="../assets/purchase-box.png";
+                    break;
+                case 'customise':
+                    obj.src="../assets/customise-box.png";
+                    break;
+                default:
+            }
+        }
+    </script>
     <title>Buy a BeneBox</title>
 </head>
 
 <body>
     <div class="header">
         <h1 class="headerh1">PURCHASE A BOX</h1>
-    </div>>
+        <div class="flexcontainer">
+        <div>
+            <img style="width:300px; height:90px;" src="../assets/purchase-box.png" onmouseover="darken(this,'purchase')" onmouseout="lighten(this,'purchase')">
+        </div>
+        <div>
+            <img style="width:300px; height:90px;" src="../assets/customise-box.png" onmouseover="darken(this,'customise')" onmouseout="lighten(this,'customise')")>
+        </div>
+        </div>
+    </div>
+    <div class="generic">
+        <h1 class="generich1">Purchase a BeneBox</h1>
+        <p class="genericp">Lorem ipsum dolor sit amet.</p>
+    </div>
 </body>
 </html>
