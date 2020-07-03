@@ -25,10 +25,14 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             top: 200px;
             text-align: center;
         }
-        .flexhorizontal {
+        .flexvertical {
             display: flex;
             flex-direction: column;
-            height: 200px;
+            position: relative;
+        }
+        .flexhorizontal {
+            display: flex;
+            flex-direction: row;
         }
         .subheader {
             font-family: 'PT Sans';
@@ -81,6 +85,10 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             text-decoration: none;
             display: inline-block;
         }
+        .customise-content {
+            display: none;
+            position: relative;
+        }
         .dropdown-content a:hover {background-color: #ddd;}
         .dropdown:hover .dropdown-content {display: inline-block;}
         .dropdown:hover .dropbtn {background-color: #3e8e41;}
@@ -88,6 +96,24 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
     <script>
         var dest = null;
         var customise = false;
+
+        function displayProducts(key) {
+            if (key != null) {
+                document.getElementById('loc').innerHTML=key;
+                document.getElementById('customise-content').style.display='inline-block';
+                switch (key) {
+                    case 'Canberra':
+                        document.getElementById('canberra-content').style.display='block';
+                        break;
+                    case 'Melbourne':
+                        document.getElementById('melbourne-content').style.display='block';
+                        break;
+                    case 'San Diego':
+                        break;
+                    default:
+                }
+            }
+        }
     </script>
     <title>Buy a BeneBox</title>
 </head>
@@ -113,9 +139,9 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
         </p>
     </div>
     <div class="generic">
-        <div class="flexhorizontal">
+        <div class="flexvertical">
             <div class="subheader">
-                <p>Where are you based?</p>
+                <p>Where is your recipient based?</p>
             </div>
             <div class="dropdown">
                 <button id="dropbtn" class="dropbtn">Select Destination...</button>
@@ -143,13 +169,79 @@ provided by W3 Schools. Link here: https://www.w3schools.com -->
             <div class="subheader" style="padding: 32px">
                 Would you like to customise your BeneBox?
             </div>
-            <div class="dropdown" style="padding: 16px">
+            <div class="dropdown">
                 <button id="ynbutton" class="dropbtn">Customise box?</button>
                 <div class="dropdown-content">
-                    <a onclick="document.getElementById('ynbutton').innerHTML = 'Yes please, customise me!'; customise=true;">
+                    <a onclick="document.getElementById('ynbutton').innerHTML = 'Yes please, customise me!';
+                    displayProducts(dest);">
                         Yes please, customise me!</a>
-                    <a onclick="document.getElementById('ynbutton').innerHTML = 'No thanks, I just want a box'; customise=false;">
+                    <a onclick="document.getElementById('ynbutton').innerHTML = 'No thanks, I just want a box';
+                    document.getElementById('customise-content').style.display='none';
+                    document.getElementById('canberra-content').style.display='none';
+                    document.getElementById('melbourne-content').style.display='none';
+                    document.getElementById('san-diego-content').style.display='none';">
                         No thanks, I just want a box</a>
+                </div>
+            </div>
+            <div class="customise-content" id="customise-content">
+                <h1>Available Products in <a id="loc"></a></h1>
+                <div id="canberra-content" class="flexvertical" style="display: none;">
+                    <div class="flexhorizontal" style="justify-content: center;">
+                        <div>
+                            <img src="../assets/fyshwick.jpg" alt="Fyshwick Markets" style="width:150px; height:150px;">
+                        </div>
+                        <div>
+                            <p class="genericp">Assorted fresh produce from Fyshwick Markets</p>
+                            <p class="genericp">Price: 20.00AUD</p>
+                        </div>
+                        <div>
+                            <p class="genericp">Check here to add to cart:</p>
+                            <input type="checkbox" id="fyshwick-markets" name="fyshwick-markets" value="fyshwick">
+                        </div>
+                    </div>
+                    <div class="flexhorizontal" style="justify-content: center;">
+                        <div>
+                            <img src="../assets/bungendore.jpg" alt="Bungendore Woodworks" style="width:150px; height:150px;">
+                        </div>
+                        <div>
+                            <p class="genericp">Some wood products from Bungendore Woodworks</p>
+                            <p class="genericp">Price: 15.00AUD</p>
+                        </div>
+                        <div>
+                            <p class="genericp">Check here to add to cart:</p>
+                            <input type="checkbox" id="bungendore-woodworks" name="bungendore-woodworks" value="bungendore">
+                        </div>
+                    </div>
+                    <div class="flexhorizontal" style="justify-content: center;">
+                        <div>
+                            <img src="../assets/paro.jpg" alt="Questacon Paro" style="width:250px; height:150px;">
+                        </div>
+                        <div>
+                            <p class="genericp">PARO Haptic Toy Seal from Questacon
+                            </p>
+                            <p class="genericp">Price: 40.00AUD</p>
+                        </div>
+                        <div>
+                            <p class="genericp">Check here to add to cart:</p>
+                            <input type="checkbox" id="questacon-putty" name="questacon-putty" value="questacon">
+                        </div>
+                    </div>
+                </div>
+                <div id="melbourne-content" class="flexvertical" style="display:none">
+                    <div class="flexhorizontal" style="justify-content: center;">
+                        <div>
+                            <img src="../assets/qvm.jpg" alt="Queen Vic Market" style="width:150px; height:150px;">
+                        </div>
+                        <div>
+                            <p class="genericp">Groceries from the Queen Victoria Market
+                            </p>
+                            <p class="genericp">Price: 25.00AUD</p>
+                        </div>
+                        <div>
+                            <p class="genericp">Check here to add to cart:</p>
+                            <input type="checkbox" id="qvm" name="qvm" value="qvm">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style="padding: 16px;">
